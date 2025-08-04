@@ -15,10 +15,16 @@ const port = process.env.PORT || 4000;
 app.use(express.json());
 
 
+
 app.use(cors({
-  origin: "https://food-delivery-main-tau.vercel.app", 
+  origin: [
+    "https://food-delivery-main-tau.vercel.app",                      // main frontend
+    "https://food-delivery-main-frtr.vercel.app",                     // admin panel
+    "https://food-delivery-main-bbob32bmm-muskans-projects-a938ae85.vercel.app"  // additional deployment
+  ],
   credentials: true
 }));
+
 
 // db connection
 connectDB();
